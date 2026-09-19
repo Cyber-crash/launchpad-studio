@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launchpad Studio — Websites cleared for liftoff | Neeraj</title>
+  <meta name="description" content="Launchpad Studio by Neeraj — high-performance, mobile-first websites that load in under 3 seconds and convert. Figma-to-code or scratch builds in 3-4 days. Custom fixed quote in 24h.">
+  <link rel="canonical" href="https://launchpadstudio.example/">
+  <meta name="theme-color" content="#0b1026" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f4ec" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Launchpad Studio — Websites cleared for liftoff">
+  <meta property="og:description" content="Sub-3s, mobile-first sites that convert. 3-4 day delivery. White-label for agencies, fresh builds for businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: { extend: {
+        colors: { ink:'#0b1026', panel:'#12173a', flare:'#ff5c1a', flare2:'#ffb347', ion:'#2dd4bf', paper:'#f6f4ec' },
+        fontFamily: { display:['Orbitron','sans-serif'], body:['"DM Sans"','system-ui','sans-serif'], mono:['"JetBrains Mono"','monospace'] }
+      } }
+    };
+    // Pre-paint theme: saved > default dark (launchpad is a night launch)
+    (function(){try{var s=localStorage.getItem('lp-theme');var t=s||'dark';document.documentElement.dataset.theme=t;document.documentElement.classList.toggle('dark',t==='dark');}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>#loader{display:none}</style></noscript>
+</head>
+<body class="font-body">
+  <div id="loader" role="status" aria-label="Loading Launchpad Studio">
+    <div class="loader-inner" aria-hidden="true">
+      <svg class="loader-rocket" viewBox="0 0 48 64" width="54" height="72">
+        <path d="M24 3c7 5 10 12.5 10 20l6 8-8-2.2c-2 3-4.8 5.2-8 6.2-3.2-1-6-3.2-8-6.2l-8 2.2 6-8c0-7.5 3-15 10-20z" fill="none" stroke="#ffb347" stroke-width="2.4" stroke-linejoin="round"/>
+        <circle cx="24" cy="17" r="3" fill="none" stroke="#ffb347" stroke-width="2.4"/>
+        <path class="loader-flame" d="M19 44h10l-5 16z" fill="#ff5c1a"/>
+      </svg>
+      <p class="loader-word">Launchpad <span>Studio</span></p>
+      <p class="loader-count">T-minus <strong><span id="load-pct">0</span>%</strong></p>
+      <div class="loader-bar"><span id="load-fill"></span></div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+  <div id="scroll-progress" aria-hidden="true"><span></span></div>
+  <div id="rocket-rail" aria-hidden="true"><div id="rocket-ship"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#ff5c1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3.5 2.5 5 6.5 5 10l3 4-4-1c-1 1.5-2.5 2.5-4 3-1.5-.5-3-1.5-4-3l-4 1 3-4c0-3.5 1.5-7.5 5-10z" fill="rgba(255,92,26,.2)"/><circle cx="12" cy="9" r="1.6"/></svg></div><div class="rail-line"></div></div>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="Launchpad Studio home">
+        <svg class="logo-svg" viewBox="0 0 240 44" aria-hidden="true">
+          <defs><linearGradient id="lp-g-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5c1a"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs>
+          <rect x="2" y="4" width="36" height="36" rx="10" fill="url(#lp-g-h)"/>
+          <g fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 9.5c3.2 2.4 4.7 6 4.7 9.6l2.8 3.7-3.8-1c-1 1.5-2.3 2.5-3.7 3-1.4-.5-2.7-1.5-3.7-3l-3.8 1 2.8-3.7c0-3.6 1.5-7.2 4.7-9.6z"/>
+            <circle cx="20" cy="16" r="1.5" fill="#ffffff" stroke="none"/>
+            <path d="M16.3 26.5l-2 5 3-1.5M23.7 26.5l2 5-3-1.5"/>
+          </g>
+          <text x="47" y="21" font-family="Orbitron, sans-serif" font-size="14.5" font-weight="800" letter-spacing="2.5" fill="currentColor">LAUNCHPAD</text>
+          <text x="48" y="35" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="7" fill="#ff5c1a">STUDIO</text>
+        </svg>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#film">Launch film</a></li>
+          <li><a href="#missions">Missions</a></li>
+          <li><a href="#fleet">Fleet</a></li>
+          <li><a href="#builder">Mission builder</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><button id="theme-toggle" class="theme-toggle" aria-pressed="true" aria-label="Switch to light mode"><svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg><span class="theme-label">Light</span></button></li>
+          <li><a href="#contact" class="btn btn-small btn-primary magnetic">Start a mission</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO — full-bleed, full-screen -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow reveal">Independent digital studio · India / Worldwide</p>
+        <h1 id="hero-title" class="reveal">Websites<br>that <em>lift off.</em></h1>
+        <p class="lede reveal">Launchpad Studio by Neeraj turns ambitious brands into high-converting digital experiences — sub-3s, mobile-first, fixed quote in 24h, launch in 3–4 days.</p>
+        <div class="hero-ctas reveal">
+          <a href="#builder" class="btn btn-primary magnetic">Start a project <span aria-hidden="true">↗</span></a>
+          <a href="https://wa.me/917368849604?text=Hi%20Launchpad%20Studio%2C%20I%20have%20a%20website%20mission" class="btn btn-ghost magnetic" target="_blank" rel="noopener">Talk on WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="hero-metrics reveal">
+          <div><dt data-count="3" data-prefix="&lt;" data-suffix="s">&lt;3s</dt><dd>target load time</dd></div>
+          <div><dt data-count="100" data-suffix="%">100%</dt><dd>responsive</dd></div>
+          <div><dt data-count="5" data-suffix="">5</dt><dd>demo missions flown</dd></div>
+        </dl>
+        <div class="countdown reveal" role="timer" aria-label="Countdown to next launch window">
+          <span class="cd-label">Next launch window opens in</span>
+          <span class="cd-time"><strong id="cd-d">00</strong>d : <strong id="cd-h">00</strong>h : <strong id="cd-m">00</strong>m : <strong id="cd-s">00</strong>s</span>
+        </div>
+      </div>
+      <p class="scroll-cue" aria-hidden="true">Scroll to explore <span>↓</span></p>
+      <div class="trust-bar" aria-label="Capabilities"><div class="wrap trust-inner">
+        <span>HTML5</span><span>CSS3 / Tailwind</span><span>JavaScript</span><span>Figma→Code</span><span>SEO-ready</span><span>WhatsApp + Maps + Analytics</span>
+      </div></div>
+    </section>
+
+    <!-- 15s SCROLL FILM -->
+    <section id="film" class="scroll-scrub" aria-labelledby="film-title" data-duration="15">
+      <div class="scroll-scrub__stage">
+        <div class="scroll-scrub__media">
+          <img class="scroll-scrub__poster" src="assets/film-poster.png" alt="" onerror="this.style.display='none'">
+          <video class="scroll-scrub__video" muted playsinline preload="metadata" poster="assets/film-poster.png" aria-label="15 second rocket launch film, scrubbed by scroll">
+            <source src="assets/film-desktop.mp4" type="video/mp4" media="(min-width: 861px)">
+            <source src="assets/film-mobile.mp4" type="video/mp4">
+          </video>
+          <canvas class="scroll-scrub__fallback" aria-hidden="true"></canvas>
+        </div>
+        <div class="scroll-scrub__progress" aria-hidden="true"><span></span></div>
+        <nav class="scroll-scrub__route" aria-label="Film chapters">
+          <button class="scroll-scrub__route-button" data-goto="0" aria-current="step">Ignition</button>
+          <button class="scroll-scrub__route-button" data-goto="1">Liftoff</button>
+          <button class="scroll-scrub__route-button" data-goto="2">Orbit</button>
+          <button class="scroll-scrub__route-button" data-goto="3">Touchdown</button>
+        </nav>
+      </div>
+      <div class="scroll-scrub__story">
+        <article class="scroll-scrub__chapter" data-align="left"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy">
+          <p class="scroll-scrub__kicker">Chapter 01 — Ignition · 0–4s</p>
+          <h2 class="scroll-scrub__title" id="film-title">Fuel the idea. Light the brief.</h2>
+          <p class="scroll-scrub__body">Discovery, positioning, sitemap. Systems check before anything leaves the pad.</p>
+          <ul class="scroll-scrub__tags"><li>Discovery</li><li>Sitemap</li></ul>
+        </div></div></article>
+        <article class="scroll-scrub__chapter" data-align="right"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy">
+          <p class="scroll-scrub__kicker">Chapter 02 — Liftoff · 4–8s</p>
+          <h2 class="scroll-scrub__title">Design that breaks gravity.</h2>
+          <p class="scroll-scrub__body">Wireframe → visual concept. You approve before a single line of code flies.</p>
+          <ul class="scroll-scrub__tags"><li>Figma</li><li>Design system</li></ul>
+        </div></div></article>
+        <article class="scroll-scrub__chapter" data-align="left"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy">
+          <p class="scroll-scrub__kicker">Chapter 03 — Orbit · 8–12s</p>
+          <h2 class="scroll-scrub__title">Build that stays fast at altitude.</h2>
+          <p class="scroll-scrub__body">Responsive code, sub-3s tuning, forms, SEO, WhatsApp — assembled in days 2–3.</p>
+          <ul class="scroll-scrub__tags"><li>sub-3s</li><li>SEO-ready</li></ul>
+        </div></div></article>
+        <article class="scroll-scrub__chapter" data-align="right"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy">
+          <p class="scroll-scrub__kicker">Chapter 04 — Touchdown · 12–15s</p>
+          <h2 class="scroll-scrub__title">Land, measure, scale.</h2>
+          <p class="scroll-scrub__body">QA, domain, analytics, handover + training. Payload delivered.</p>
+          <div class="scroll-scrub__actions"><a href="#builder" class="btn btn-primary">Plan my launch</a></div>
+        </div></div></article>
+      </div>
+      <p class="film-note">Higgsfield single-shot slot: one continuous ~15s rocket-liftoff take (dark pad, slow rise, no cuts, no text) → <code>assets/film-desktop.mp4</code> + <code>film-mobile.mp4</code> + poster. Scroll scrubs frames; canvas fallback flies until then. Commands in README.</p>
+    </section>
+
+    <!-- FLEET / SERVICES -->
+    <section id="fleet" class="section" aria-labelledby="fleet-title"><div class="wrap">
+      <div class="section-head reveal"><p class="eyebrow">The fleet</p><h2 id="fleet-title">Three spacecraft, one mission: customers</h2></div>
+      <div class="cards-3">
+        <article class="card reveal tilt"><p class="card-num">S-01</p><div class="card-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><circle cx="7.5" cy="8.5" r=".8" fill="currentColor"/><circle cx="11" cy="8.5" r=".8" fill="currentColor"/><circle cx="14.5" cy="8.5" r=".8" fill="currentColor"/><path d="M6 12.5h9"/></svg></div>
+          <h3>Web design &amp; development</h3><p>Distinctive, fast sites that escape template gravity. Mobile-first, accessible.</p>
+          <ul><li>Up to 6–12 pages or landing system</li><li>Responsive + cross-browser QA</li><li>Analytics + Search Console</li></ul>
+          <a href="#builder" class="text-link">Configure in builder →</a></article>
+        <article class="card reveal tilt"><p class="card-num">S-02</p><div class="card-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16"/></svg></div>
+          <h3>Figma-to-code + white-label</h3><p>For agencies: overflow crew. Your design → clean code in 3–4 days, NDA, your flag on the hull.</p>
+          <ul><li>Pixel-perfect handover</li><li>1–3 revision orbits</li><li>30 days ground support</li></ul>
+          <a href="#builder" class="text-link">Dock as partner →</a></article>
+        <article class="card reveal tilt"><p class="card-num">S-03</p><div class="card-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 15c4-6 6 3 10-2 2.4-3 4-1 6-3"/><circle cx="4" cy="19" r="1.6"/></svg></div>
+          <h3>SEO + growth landing pages</h3><p>Findable from day one. Meta, schema, speed + pages that catch paid traffic.</p>
+          <ul><li>Schema + sitemap + SSL</li><li>Core Web Vitals tuning</li><li>WhatsApp / Maps / forms</li></ul>
+          <a href="#builder" class="text-link">Plot trajectory →</a></article>
+      </div>
+    </div></section>
+
+    <!-- MISSIONS / WORK -->
+    <section id="missions" class="section section-alt" aria-labelledby="missions-title"><div class="wrap">
+      <div class="section-head reveal"><p class="eyebrow">Flight log — concept demos</p><h2 id="missions-title">Demo missions, real skills</h2>
+        <p>Every site below is a <strong>demo</strong> built to show range — cafés, gyms, bookings, calculators, WhatsApp funnels. Your mission gets the same systems, custom-built for your brand.</p>
+        <div class="filters" role="group" aria-label="Filter missions">
+          <button class="filter-btn is-active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="cafe">Cafés</button>
+          <button class="filter-btn" data-filter="fitness">Fitness</button>
+        </div></div>
+      <div class="work-grid" id="work-grid">
+        <article class="work-card reveal tilt" data-category="cafe"><div class="work-thumb"><img src="assets/img/work-portal.jpg" alt="Cosy café interior with warm light" loading="lazy" decoding="async"><span class='demo-badge'>Demo</span><span>Escape by the Portal — Vadodara</span></div>
+          <h3>Escape by the Portal</h3><p class="work-meta">Café · VR + Cats · Booking + Menu</p>
+          <p>Open-roof café, VR arena, board games, resident cats. Menu, reviews, directions, click-to-call.</p>
+          <p><a href="https://escape-by-the-portal.vercel.app/" class="text-link" target="_blank" rel="noopener">View live demo →</a></p></article>
+        <article class="work-card reveal tilt" data-category="fitness"><div class="work-thumb"><img src="assets/img/work-octane.jpg" alt="Modern gym floor with equipment" loading="lazy" decoding="async"><span class='demo-badge'>Demo</span><span>Octane Fitness — Chandigarh</span></div>
+          <h3>Octane Fitness</h3><p class="work-meta">Fitness · Premium gym · Trial funnel</p>
+          <p>Transformation-first gym site with tiers and free-trial capture.</p>
+          <p><a href="https://octane-fitness.vercel.app/" class="text-link" target="_blank" rel="noopener">View live demo →</a></p></article>
+        <article class="work-card reveal tilt" data-category="fitness"><div class="work-thumb"><img src="assets/img/work-pfitness.jpg" alt="Athlete training with dumbbells" loading="lazy" decoding="async"><span class='demo-badge'>Demo</span><span>Project Fitness — Lucknow</span></div>
+          <h3>Project Fitness Gym</h3><p class="work-meta">Fitness · 4.5★ 397+ reviews · Tools</p>
+          <p>BMI + membership calculators, plans, trainers, WhatsApp trial flow.</p>
+          <p><a href="https://project-fitness-one.vercel.app" class="text-link" target="_blank" rel="noopener">View live demo →</a></p></article>
+        <article class="work-card reveal tilt" data-category="cafe"><div class="work-thumb"><img src="assets/img/work-bluedoor.jpg" alt="Barista pouring artisan coffee" loading="lazy" decoding="async"><span class='demo-badge'>Demo</span><span>Blue Door Café — Delhi</span></div>
+          <h3>The Blue Door Café</h3><p class="work-meta">Café · Khan Market · Reservations</p>
+          <p>European breakfast house — signatures, menu, table booking.</p>
+          <p><a href="https://the-blue-door-cafe.vercel.app/" class="text-link" target="_blank" rel="noopener">View live demo →</a></p></article>
+        <article class="work-card reveal tilt" data-category="cafe"><div class="work-thumb"><img src="assets/img/work-crackpot.jpg" alt="Latte art in a ceramic cup" loading="lazy" decoding="async"><span class='demo-badge'>Demo</span><span>Crackpot — Newtown</span></div>
+          <h3>Crackpot Café &amp; Bistro</h3><p class="work-meta">Café · Workspace · Menu filter</p>
+          <p>Quirky bistro + workspace, veg/non-veg/beverage filter, reviews.</p>
+          <p><a href="https://crackpot.vercel.app/" class="text-link" target="_blank" rel="noopener">View live demo →</a></p></article>
+      </div>
+    </div></section>
+
+    <!-- MISSION BUILDER (interactive) -->
+    <section id="builder" class="section" aria-labelledby="builder-title"><div class="wrap">
+      <div class="section-head reveal"><p class="eyebrow">Interactive — 30 seconds</p><h2 id="builder-title">Assemble your mission</h2>
+      <p>Pick a craft, bolt on modules, choose a window. Get a mission class + timeline instantly — then send it straight to our comms.</p></div>
+      <div class="builder reveal" role="group" aria-label="Mission builder">
+        <div class="builder-steps" role="tablist" aria-label="Builder steps">
+          <button class="bstep is-active" data-step="0" role="tab" aria-selected="true"><strong>1</strong> Craft</button>
+          <button class="bstep" data-step="1" role="tab" aria-selected="false"><strong>2</strong> Modules</button>
+          <button class="bstep" data-step="2" role="tab" aria-selected="false"><strong>3</strong> Window</button>
+        </div>
+        <div class="builder-progress" aria-hidden="true"><span id="b-fill"></span></div>
+        <div class="bpanes">
+          <div class="bpane is-active" data-pane="0" role="tabpanel">
+            <div class="pick-grid" data-pick="craft">
+              <button data-val="New website from scratch"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 7h-4v6h-6V9H5l7-7z"/><path d="M9 15l-2 6 5-3 5 3-2-6"/></svg><span>New website</span></button>
+              <button data-val="Figma → code"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/></svg><span>Figma → code</span></button>
+              <button data-val="Agency white-label / overflow"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"/><path d="M2 21v-1a7 7 0 0 1 14 0v1"/><path d="M17 8l5 5M22 8l-5 5"/></svg><span>White-label</span></button>
+              <button data-val="Redesign + speed + SEO"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg><span>Redesign + speed</span></button>
+            </div>
+          </div>
+          <div class="bpane" data-pane="1" role="tabpanel">
+            <div class="pick-grid multi" data-pick="modules">
+              <button data-val="Booking / reservations"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span>Booking</span></button>
+              <button data-val="WhatsApp + Maps"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-16.5 5L3 21l4.2-1.4A9 9 0 0 1 21 12z"/><path d="M9 10.5c.5 2.5 3 5 5.5 5.5l1.5-1.5 2.5 1.5c-.5 1.5-2 2-3.5 1.5-3.5-1-7-4.5-8-8-.5-1.5 0-3 1.5-3.5l1.5 2.5L9 10.5z" stroke-width="1.3"/></svg><span>WhatsApp + Maps</span></button>
+              <button data-val="Menu / catalog"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V2M6 2v20M18 2c-2 0-3 2.5-3 6 0 2.5 1.5 4 3 4v10M18 2v20"/></svg><span>Menu / catalog</span></button>
+              <button data-val="SEO + analytics"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20v-7M11 20V9M16 20v-11M21 20V5"/></svg><span>SEO + analytics</span></button>
+              <button data-val="Blog / CMS"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Blog / CMS</span></button>
+              <button data-val="Payments / store"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg><span>Payments</span></button>
+            </div>
+          </div>
+          <div class="bpane" data-pane="2" role="tabpanel">
+            <div class="pick-grid" data-pick="window">
+              <button data-val="ASAP"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-3 7-7 7-11a7 7 0 1 0-14 0c0 4 3 8 7 11z"/><circle cx="12" cy="11" r="2.5"/></svg><span>ASAP</span></button>
+              <button data-val="Within 2 weeks"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M9 15l2 2 4-4"/></svg><span>2 weeks</span></button>
+              <button data-val="Flexible"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2.5-5 5-5 7.5 0s5 5 7.5 0 3-3.5 5-2"/><path d="M2 17c2.5-5 5-5 7.5 0s5 5 7.5 0 3-3.5 5-2"/></svg><span>Flexible</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="builder-nav">
+          <button id="b-back" class="btn btn-secondary btn-small" disabled>← Back</button>
+          <button id="b-next" class="btn btn-primary btn-small">Next →</button>
+        </div>
+        <div id="mission-result" class="mission-result" aria-live="polite" hidden>
+          <h3 id="mr-class">Mission class: Orbital</h3>
+          <p id="mr-line"></p>
+          <p class="microcopy">Fixed quote in 24h · No prices on site · 2 slots/week</p>
+          <div class="hero-ctas"><button id="mr-send" class="btn btn-primary">Send mission via WhatsApp</button>
+          <a href="#contact" class="btn btn-secondary">Or use the form ↓</a></div>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- CASES -->
+    <section id="cases" class="section section-alt" aria-labelledby="cases-title"><div class="wrap">
+      <div class="section-head reveal"><p class="eyebrow">Flight logs</p><h2 id="cases-title">Proof, not promises</h2></div>
+      <div class="cases">
+        <article class="case reveal"><h3>Log 01 — Café site that books tables while you sleep</h3>
+          <dl class="case-steps"><div><dt>Challenge</dt><dd>Great food, invisible online — no menu, no booking path.</dd></div>
+          <div><dt>Maneuver</dt><dd>Menu + Galleries + click-to-call + Maps + reviews in a 3-day sprint.</dd></div>
+          <div><dt>Result</dt><dd>Escape by the Portal + 2 more cafés live. Pattern: <span data-count="3">3</span> café missions flown.</dd></div></dl></article>
+        <article class="case reveal"><h3>Log 02 — Gym funnel that fills trial slots</h3>
+          <dl class="case-steps"><div><dt>Challenge</dt><dd>Footfall flat, trials leaking on slow pages.</dd></div>
+          <div><dt>Maneuver</dt><dd>Plans + calculators + WhatsApp trial flow, sub-3s budget.</dd></div>
+          <div><dt>Result</dt><dd>Octane + Project Fitness live. Pattern: <span data-count="2">2</span> fitness missions flown.</dd></div></dl></article>
+      </div>
+    </div></section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section" aria-labelledby="process-title"><div class="wrap">
+      <div class="section-head reveal"><p class="eyebrow">Flight plan — PDR blueprint</p><h2 id="process-title">Pad to orbit in 3–4 days</h2></div>
+      <div class="process-grid">
+      <ol class="timeline">
+        <li class="reveal"><strong>T-4 · Discovery &amp; Strategy</strong><span>Goals, audience, content, success map.</span></li>
+        <li class="reveal"><strong>T-3 · Wireframe &amp; Design</strong><span>Concept locked before code.</span></li>
+        <li class="reveal"><strong>T-2 → T-1 · Build</strong><span>Responsive code, forms, animations, SEO.</span></li>
+        <li class="reveal"><strong>T-1 · QA</strong><span>Devices, speed, links, security. Live preview.</span></li>
+        <li class="reveal"><strong>T-0 · Liftoff &amp; handover</strong><span>Domain, analytics, training + guide.</span></li>
+      </ol>
+      <figure class="process-photo reveal">
+        <img src="assets/img/team-code.jpg" alt="Developer workstation with code on screen" loading="lazy" decoding="async">
+        <figcaption>Clean code, mission control discipline — every build ships reviewed.</figcaption>
+      </figure>
+      </div>
+      <div class="pdr-cta reveal"><a href="assets/Project-PDR-Blueprint-Proposal.pdf" class="btn btn-primary" download>Download the flight plan (PDR PDF)</a>
+      <p class="microcopy">Full workflow + scoped quote process. Fixed quote within 24h of discovery.</p></div>
+    </div></section>
+
+    <!-- TESTIMONIALS slider -->
+    <section class="testimonial" aria-labelledby="t-title"><div class="testimonial-bg" aria-hidden="true"></div><div class="wrap narrow reveal">
+      <h2 id="t-title" class="eyebrow">Transmissions</h2>
+      <div class="slider" id="slider">
+        <blockquote class="slide is-active">“Neeraj gave us a site that feels exactly like the company we’d been trying to become — fast, clear, and it brings enquiries.”<p class="cite">— Placeholder founder · your first quote goes here</p></blockquote>
+        <blockquote class="slide">“Figma in, pixel-perfect site out, in days. The cleanest white-label handover we’ve had.”<p class="cite">— Agency partner persona · replace with real</p></blockquote>
+        <blockquote class="slide">“Menu, bookings, Maps — customers find us and call. It just works on phones.”<p class="cite">— Café owner persona · replace with real</p></blockquote>
+        <div class="slider-nav"><button id="sl-prev" aria-label="Previous testimonial">←</button>
+        <span id="sl-dots" role="tablist" aria-label="Choose testimonial"></span>
+        <button id="sl-next" aria-label="Next testimonial">→</button></div>
+      </div>
+    </div></section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="faq-title"><div class="wrap narrow">
+      <div class="section-head reveal"><p class="eyebrow">Comms check</p><h2 id="faq-title">Questions, answered</h2></div>
+      <div class="faq reveal">
+        <details open><summary>How fast can we launch?</summary><p>Most missions launch in 3–4 working days once content is ready. Stores/bookings may extend slightly — confirmed at discovery.</p></details>
+        <details><summary>Why no prices on the site?</summary><p>Every mission is scoped — pages, integrations, content. Tell us the goal and you get a fixed quote in 24h. The builder + contact form capture budget bands so we quote precisely.</p></details>
+        <details><summary>Got a Figma design?</summary><p>Yes — send it. We convert to clean, responsive, pixel-perfect code with 1–3 revision orbits.</p></details>
+        <details><summary>Do you white-label for agencies?</summary><p>Yes. NDA, your branding on the handover, overflow-friendly timelines.</p></details>
+        <details><summary>What support after liftoff?</summary><p>30–90 days by scope, plus training walkthrough and handover guide.</p></details>
+      </div>
+    </div></section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title"><div class="wrap contact-grid">
+      <div class="reveal"><p class="eyebrow">Your next move</p><h2 id="contact-title">Request launch clearance</h2>
+        <p>Tell us the destination. Fixed scope + timeline in 24h.</p>
+        <ul class="contact-list">
+          <li><strong>WhatsApp / Phone:</strong> <a href="https://wa.me/917368849604" target="_blank" rel="noopener">7368849604</a></li>
+          <li><strong>Email:</strong> <a href="mailto:7091331316neeraj@gmail.com">7091331316neeraj@gmail.com</a></li>
+          <li><strong>Base:</strong> Launchpad Studio · India / Worldwide</li>
+        </ul></div>
+      <form id="contact-form" class="contact-form reveal" novalidate>
+        <div class="field"><label for="cf-name">Commander name</label><input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Aarav Sharma"><p class="field-error" data-error-for="cf-name" hidden>Please enter your name.</p></div>
+        <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"><p class="field-error" data-error-for="cf-email" hidden>Enter a valid email.</p></div>
+        <div class="field"><label for="cf-type">Mission type</label><select id="cf-type" name="type" required><option value="">Select…</option><option>New website from scratch</option><option>Figma → code</option><option>Agency white-label / overflow</option><option>Redesign + speed + SEO</option></select><p class="field-error" data-error-for="cf-type" hidden>Choose a mission type.</p></div>
+        <div class="field"><label for="cf-budget">Fuel budget (bands only — quote stays custom)</label><select id="cf-budget" name="budget" required><option value="">Select…</option><option>Under ₹25k</option><option>₹25–50k</option><option>₹50k+</option></select><p class="field-error" data-error-for="cf-budget" hidden>Pick a band.</p></div>
+        <div class="field"><label for="cf-msg">Mission brief</label><textarea id="cf-msg" name="message" rows="5" required placeholder="Destination, pages, references, deadline…"></textarea><p class="field-error" data-error-for="cf-msg" hidden>Tell us the destination.</p></div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+        <button type="submit" class="btn btn-primary" id="launch-btn">Launch request — quote in 24h</button>
+        <p class="microcopy">Prefer chat? <a href="https://wa.me/917368849604" target="_blank" rel="noopener">WhatsApp us</a>. No spam, NDA on request.</p>
+      </form>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner">
+      <a href="#top" class="brand" aria-label="Launchpad Studio home">
+        <svg class="logo-svg" viewBox="0 0 240 44" aria-hidden="true">
+          <defs><linearGradient id="lp-g-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5c1a"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs>
+          <rect x="2" y="4" width="36" height="36" rx="10" fill="url(#lp-g-f)"/>
+          <g fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 9.5c3.2 2.4 4.7 6 4.7 9.6l2.8 3.7-3.8-1c-1 1.5-2.3 2.5-3.7 3-1.4-.5-2.7-1.5-3.7-3l-3.8 1 2.8-3.7c0-3.6 1.5-7.2 4.7-9.6z"/>
+            <circle cx="20" cy="16" r="1.5" fill="#ffffff" stroke="none"/>
+            <path d="M16.3 26.5l-2 5 3-1.5M23.7 26.5l2 5-3-1.5"/>
+          </g>
+          <text x="47" y="21" font-family="Orbitron, sans-serif" font-size="14.5" font-weight="800" letter-spacing="2.5" fill="currentColor">LAUNCHPAD</text>
+          <text x="48" y="35" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="7" fill="#ff5c1a">STUDIO</text>
+        </svg>
+      </a>
+    <p>Websites cleared for liftoff. © 2026 Launchpad Studio · Neeraj</p>
+    <p class="microcopy"><a href="#top">Back to pad ↑</a></p>
+  </div></footer>
+
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
